@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCUH Testing System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo2.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <img src="logo2.png" alt="Logo" class="logo" />
+      <h2>GCUH Testing System</h2>
+      <p class="portal">BBSHRRDB Quiz Portal</p>
+
+      <form onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="Enter Username or Email" required />
+        <div id="userError" class="error"></div>
+
+        <div class="password-box">
+          <input type="password" id="password" placeholder="Enter Password" required />
+          <div id="passError" class="error"></div>
+        </div>
+
+        <button type="submit">Sign In</button>
+      </form>
+      
+      <p class="footer-text">
+        Contact <strong>Mr. Nizakat Hussain</strong> or <strong>Mr. Asif</strong><br />
+        for Login ID & Password
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      let valid = true;
+
+      document.getElementById("userError").innerText = "";
+      document.getElementById("passError").innerText = "";
+
+      // Username validation
+      if (user === "") {
+        document.getElementById("userError").innerText = "Username or email is required!";
+        valid = false;
+      }
+
+      // Password validation
+      if (pass === "") {
+        document.getElementById("passError").innerText = "Password is required!";
+        valid = false;
+      } else if (pass.length < 6) {
+        document.getElementById("passError").innerText = "Password must be at least 6 characters!";
+        valid = false;
+      }
+
+      if (!valid) return false;
+
+      // Role-based redirection
+      if (user === "admin@admin.com" && pass === "nizakat@123") {
+        window.location.href = "Admin/admdashboard.html"; // Admin Dashboard
+      } 
+      else if (user === "abc@student.com" && pass === "student123") {
+        window.location.href = "Student/stddashboard.html"; // Student Dashboard
+      } 
+      else if (user === "xyz@instructor.com" && pass === "instructor123") {
+        window.location.href = "Instructor/insdashboard.html"; // Instructor Dashboard
+      } 
+      else {
+        alert("Invalid username or password!");
+      }
+
+      return false; // Prevent actual form submission
+    }
+  </script>
+</body>
+</html>

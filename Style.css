@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.portal {
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+form input[type="text"] {
+margin-top:15px;
+}
+.password-box {
+  position: relative;
+}
+
+.password-box .eye {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+button {
+ width:100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left:5px;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-text {
+  font-size: 13px;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.5;
+  animation: fadeSlideUp 1.5s ease-out;
+}
+
+  /* Buttons (jo blue the unko replace karo) */
+  .btn-primary,
+  .btn-info {
+    background-color: #69263a !important;
+    border-color: #69263a !important;
+    color: #fff !important;
+  }
+
+  .btn-primary:hover,
+  .btn-info:hover {
+    background-color: #501c2c !important; /* hover darker shade */
+    border-color: #501c2c !important;
+  }
+
+  /* Card headers (jo primary wale hain unko replace karo) */
+  .card-primary:not(.card-outline) > .card-header {
+    background-color: #69263a !important;
+    border-color: #69263a !important;
+    color: #fff !important;
+  }
+
+  .card-primary:not(.card-outline) > .card-header .card-title {
+    color: #fff !important;
+  }
+
